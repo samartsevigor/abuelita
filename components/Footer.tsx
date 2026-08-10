@@ -1,9 +1,8 @@
+import { demoNotice } from "@/lib/demo";
 import { site } from "@/lib/site";
 import Link from "next/link";
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-white/5 bg-bg-elevated">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 md:flex-row md:items-end md:justify-between md:px-8">
@@ -27,7 +26,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/5 px-5 py-4 text-center text-xs text-muted/60 md:px-8">
-        © {year} {site.name}. All rights reserved.
+        {demoNotice}
       </div>
     </footer>
   );

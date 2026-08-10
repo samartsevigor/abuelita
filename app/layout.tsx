@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans, Pacifico } from "next/font/google";
+import { DemoBanner } from "@/components/DemoBanner";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import "./globals.css";
 
@@ -24,6 +25,14 @@ export const metadata: Metadata = {
   title: "Abuelita's | Latin Fusion & Cocktails — Saint John, NB",
   description:
     "Latin fusion restaurant in Uptown Saint John. 2026 Uptown Burger Week winner, tequila-forward cocktails, and Chef José Adair’s kitchen.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   openGraph: {
     title: "Abuelita's — Latin Fusion & Cocktails",
     description: "A seat at the table. Reserve your night in Uptown Saint John.",
@@ -38,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${body.variable} ${display.variable} ${script.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-bg font-sans text-text">
+        <DemoBanner />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
